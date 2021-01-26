@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %}Recent Pets{% endblock %} {% block content %}
+<a href="/add" class="btn btn-primary">Add</a>
+
+<div class="row justify-content-center mt-3">
+    {% for pet in pets %}
+    <div class="col col-md-6 col-lg-4 mb-3 d-flex justify-content-center">
+
+        <div class="pet-container" style="width: 16rem;">
+            <a href='/{{pet.id}}'>
+                <img src="{{pet.photo_url}}" class="card-img-top img-fluid" alt="{{pet.name}} the {{pet.species}}">
+            </a>
+            <div class="card-body">
+                <p class="card-text"><span class="text-info">{{pet.name}}</span>{% if pet.available %}<b> is available!</b>{% endif %}</p>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

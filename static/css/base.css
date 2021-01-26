@@ -1,0 +1,21 @@
+.card-body {
+    border: solid 1px rgba(173, 173, 173, 0.3);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.card-text span {
+    font-size: 1.15rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.checkbox-group input {
+    margin-bottom: .25rem;
+    margin-left: .5rem;
+    width: auto;
+}

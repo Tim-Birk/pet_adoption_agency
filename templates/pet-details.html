@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title %}Pet Profile{% endblock %} {% block content %}
+
+<a href="/">Back</a>
+
+<div class="row mt-4">
+    <div class="col-sm-4 col-md-3">
+        <a href="{{pet.photo_url}}" target="blank">
+            <img id="profile-picture" src="{{pet.photo_url}}" alt="Profile picture for {{pet.name}}" class="img-thumbnail"></a>
+    </div>
+
+    <div class="col-sm-8 col-md-9">
+        <div class="row d-flex flex-column ml-2">
+            <h2>{{pet.name}}</h2>
+            <ul>
+                <li>Species: {{pet.species}}</li>
+                <li>Age: {{pet.age}}</li>
+            </ul>
+            <p>{{pet.notes}}</p>
+            <div class="row d-flex ml-1">
+                <a class="btn btn-sm btn-primary" href="/{{pet.id}}/edit">Edit</a>
+                <form action="/{{pet.id}}/delete" class="ml-2" method="POST">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
